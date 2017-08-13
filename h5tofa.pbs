@@ -1,0 +1,19 @@
+#PBS -n h5tofa
+#PBS -l nodes=1:ppn=10
+#PBS -l walltime=720:0:0
+#PBS -q high
+cd /home02/huangyue/HWB/data/raw_data/HWB4
+source /home02/huangyue/software/SMRT_analysis/opt/install/smrtanalysis_2.3.0.140936/etc/setup.sh
+for sample in G11_*;
+do
+	cd $sample
+	cd Analysis_Results
+	for i in *.bax.h5
+	do
+		name1=${i%.*}
+		name2=${name1%.*}
+		bash5tools.py  $i --outFilePref $name2.subreads --outType fasta --readType subreads --minLength 100
+	done
+	cd ../..
+done
+

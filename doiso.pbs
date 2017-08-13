@@ -1,0 +1,10 @@
+#PBS -n testA
+#PBS -l nodes=1:ppn=10
+#PBS -l walltime=720:0:0
+#PBS -j oe
+#PBS -e /data4/shengyufeng/logs/testA.e.log
+#PBS -o /data4/shengyufeng/logs/testA.o.log
+#PBS -q batch
+source /data4/jguo/opt/pacbio/install/smrtanalysis_2.3.0.140936/etc/setup.sh
+cd /data4/shengyufeng/data/rawdata/Arabidopsis_thaliana/
+smrtpipe.py -D NPROC=24  -D TMP=/data4/shengyufeng/tmp/  --params=./Iso_seq.xml xml:./Arabidopsis_thaliana.bax.xml --output ./result/ >  Ath_smrtpipe.log
