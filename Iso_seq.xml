@@ -21,7 +21,7 @@
             <input value="inactive" type="radio"/>
         </param>
         <param name="reference" hidden="true">
-            <value>common/references/MH63</value>
+            <value>smrtanalysis_userdata/references/2kb_control</value>
             <rule required="false"/>
         </param>
         <param name="control" hidden="true">
@@ -124,7 +124,7 @@
     A cDNA analysis workflow to predict de novo consensus isoforms of transcripts from the classified reads using the ICE (Iteratively Clustering and Error Correction) algorithm.  Align predicted consensus isoforms to the user-specific reference sequence using GMAP.
     </description>
             <param name="cluster" label="Predict consensus isoforms using the ICE algorithm">
-                <value>False</value>
+                <value>True</value>
                 <title>Specify whether or not to predict consensus isoforms using the Iterative Clustering and Error Correction (ICE) algorithm.</title>
                 <input type="checkbox"/>
             </param>
@@ -158,7 +158,7 @@
                 <input type="checkbox"/>
             </param>
             <param name="hq_quiver_min_accuracy" label="Minimum quiver accuracy to classify an isoform as HQ">
-                <value>0.99</value>
+                <value>0.98</value>
                 <title>The minimum Quiver accuracy needed to classify an isoform as high quality.</title>
                 <input type="text"/>
                 <rule type="number" min="0.0" message="Value must be between 0.0 and 1.0" max="1.0"/>
