@@ -60,4 +60,3 @@ while($line=<IN>)
          	 }
 }
 }
-print "Com!"
